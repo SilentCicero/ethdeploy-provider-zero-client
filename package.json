@@ -1,0 +1,29 @@
+{
+  "name": "ethdeploy-provider-zero-client",
+  "version": "0.1.0",
+  "description": "A zero client standard Web3 provider for ethdeploy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/silentcicero/ethdeploy-provider-zero-client.git"
+  },
+  "keywords": [
+    "ethdeploy",
+    "http",
+    "provider",
+    "ethereum",
+    "web3"
+  ],
+  "author": "= <=>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silentcicero/ethdeploy-provider-zero-client/issues"
+  },
+  "homepage": "https://github.com/silentcicero/ethdeploy-provider-zero-client#readme",
+  "dependencies": {
+    "web3-provider-engine": "^7.8.6"
+  }
+}

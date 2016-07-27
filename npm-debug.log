@@ -1,0 +1,105 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.8.5
+3 info using node@v5.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/nick/github/ethdeploy-provider-zero-client',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/nick/.npm/ethdeploy-provider-http/0.1.0/package.tgz not in flight; packing
+9 verbose correctMkdir /home/nick/.npm correctMkdir not in flight; initializing
+10 info lifecycle ethdeploy-provider-http@0.1.0~prepublish: ethdeploy-provider-http@0.1.0
+11 silly lifecycle ethdeploy-provider-http@0.1.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/nick/.npm/ethdeploy-provider-http/0.1.0/package.tgz',
+12 verbose tar pack   '/home/nick/github/ethdeploy-provider-zero-client' ]
+13 verbose tarball /home/nick/.npm/ethdeploy-provider-http/0.1.0/package.tgz
+14 verbose folder /home/nick/github/ethdeploy-provider-zero-client
+15 verbose addLocalTarball adding from inside cache /home/nick/.npm/ethdeploy-provider-http/0.1.0/package.tgz
+16 verbose correctMkdir /home/nick/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd ethdeploy-provider-http@0.1.0
+18 verbose afterAdd /home/nick/.npm/ethdeploy-provider-http/0.1.0/package/package.json not in flight; writing
+19 verbose correctMkdir /home/nick/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/nick/.npm/ethdeploy-provider-http/0.1.0/package/package.json written
+21 silly publish { name: 'ethdeploy-provider-http',
+21 silly publish   version: '0.1.0',
+21 silly publish   description: 'The standard Ethereum web3 HTTP provider for ethdeploy.',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+ssh://git@github.com/silentcicero/ethdeploy-http-provider.git' },
+21 silly publish   keywords: [ 'ethdeploy', 'http', 'provider', 'ethereum', 'web3' ],
+21 silly publish   author: { name: '=', email: '=' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/silentcicero/ethdeploy-http-provider/issues' },
+21 silly publish   homepage: 'https://github.com/silentcicero/ethdeploy-http-provider#readme',
+21 silly publish   dependencies: { 'web3-provider-engine': '^7.8.6' },
+21 silly publish   devDependencies: { 'ethereumjs-tx': '^1.1.2' },
+21 silly publish   readme: '## ethdeploy-provider-zero-client\n\nThe zero client standard Web3 provider for the [ethdeploy](http://github.com/silentcicero/ethdeploy) Ethereum smart-contract deployment system.\n\n## Zero Client\n\nThe zero-client provider was designed by the @MetaMask team, namely, @kumavis to handle the management of accounts and key signing for web3 RPC interaction.\n\nSee more here: [zero-client](https://github.com/MetaMask/provider-engine#built-for-zero-clients)\n\n## Install\n\n```\nnpm install --save ethdeploy-provider-zero-client\n```\n\n## Licence\n\nReleased under the MIT License, see [LICENSE.md](LICENSE.md) file.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   _id: 'ethdeploy-provider-http@0.1.0',
+21 silly publish   _shasum: 'b133df12b853984d7104ef87bd91ab89724b1346',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name ethdeploy-provider-http
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'ethdeploy-provider-http',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'ethdeploy-provider-http',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/ethdeploy-provider-http
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /home/nick/.npm/ethdeploy-provider-http/0.1.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/ethdeploy-provider-http
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 3:01:07 AM
+33 verbose request id e7573dead7920090
+34 http request PUT https://registry.npmjs.org/ethdeploy-provider-http
+35 http 403 https://registry.npmjs.org/ethdeploy-provider-http
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '95',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Wed, 27 Jul 2016 07:01:07 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-nrt6126-NRT',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1469602867.257337,VS0,VE518',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /home/nick/.npm/registry.npmjs.org/ethdeploy-provider-http on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : ethdeploy-provider-http
+39 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:199:22)
+39 verbose stack     at emitTwo (events.js:100:13)
+39 verbose stack     at Request.emit (events.js:185:7)
+39 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1036:10)
+39 verbose stack     at emitOne (events.js:95:20)
+39 verbose stack     at Request.emit (events.js:182:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:963:12)
+40 verbose statusCode 403
+41 verbose pkgid ethdeploy-provider-http
+42 verbose cwd /home/nick/github/ethdeploy-provider-zero-client
+43 error Linux 4.0.0-040000-generic
+44 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+45 error node v5.6.0
+46 error npm  v3.8.5
+47 error code E403
+48 error "You cannot publish over the previously published version 0.1.0." : ethdeploy-provider-http
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
