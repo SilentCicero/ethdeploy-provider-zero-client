@@ -2,6 +2,40 @@
 const ProviderEngine = require('web3-provider-engine');
 const zeroClientProvider = require('web3-provider-engine/zero');
 
+// fix getAccounts method
+const fixGetAccounts = function(providerObject) {
+  const fixedProviderObject = Object.assign({}, providerObject);
+  const oldGetAccountsMethod = providerObject.getAccounts;
+
+  // fix get accounts
+  if (typeof fixedProviderObject.getAccounts !== 'undefined') {
+    fixedProviderObject.getAccounts = function(getAccountsCallback) {
+      const oldCallback = getAccountsCallback;
+
+      // build fixed callback with lowercased accounts
+      const fixedCallback = function(accountsError, accountsResult) {
+        const fixedAccountsResult = accountsResult.slice(0);
+
+        // if no error, fixed result
+        if (!accountsError) {
+          fixedAccountsResult.map(function(item) {
+            return String(item.toLowerCase());
+          });
+        }
+
+        // fire oldd callback with new fix
+        oldCallback(accountsError, fixedAccountsResult);
+      }
+
+      // fire get accounts method
+      oldGetAccountsMethod(fixedCallback);
+    };
+  }
+
+  // return fixed provider object
+  return fixedProviderObject;
+};
+
 // fix ethereumjs-tx rawTx object
 const fixEthereumJSTxObject = function(rawTx) {
   const rawTxMutation = Object.assign({}, rawTx);
@@ -26,12 +60,12 @@ const fixSignTransactionMethod = function(providerObject) {
   const fixedProviderObject = Object.assign({}, providerObject);
 
   // object has signTransaction
-  if (typeof providerObject.signTransaction !== 'undefined') {
+  if (typeof fixedProviderObject.signTransaction !== 'undefined') {
     // store old sign transaction method
-    const oldSignTransactionMethod = providerObject.signTransaction;
+    const oldSignTransactionMethod = fixedProviderObject.signTransaction;
 
     // build new provider object signTransaciton method
-    providerObject.signTransaction = function(rawTx, cb) {
+    fixedProviderObject.signTransaction = function(rawTx, cb) {
       // fire old callback
       oldSignTransactionMethod(fixEthereumJSTxObject(rawTx), cb);
     };
@@ -50,5 +84,5 @@ module.exports = function(providerObject) {
   const providerObjectMutation = Object.assign(providerObject, {rpcUrl: rpcUrlString});
 
   // return web3 provider
-  return zeroClientProvider(fixedProviderObject(providerObjectMutation));
+  return zeroClientProvider(fixGetAccounts(fixSignTransactionMethod(providerObjectMutation)));
 };
