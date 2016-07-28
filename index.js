@@ -7,7 +7,7 @@ const fixEthereumJSTxObject = function(rawTx) {
   const rawTxMutation = Object.assign({}, rawTx);
 
   // fix rawTx gaslimit
-  if (typeof rawTxMutation.gas !== 'undefined' {
+  if (typeof rawTxMutation.gas !== 'undefined') {
     rawTxMutation.gasLimit = rawTxMutation.gas;
     delete rawTxMutation.gas;
   }

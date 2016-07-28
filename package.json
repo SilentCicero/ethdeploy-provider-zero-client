@@ -1,6 +1,6 @@
 {
   "name": "ethdeploy-provider-zero-client",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A zero client standard Web3 provider for ethdeploy.",
   "main": "index.js",
   "scripts": {
