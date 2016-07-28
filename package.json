@@ -1,6 +1,6 @@
 {
   "name": "ethdeploy-provider-zero-client",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A zero client standard Web3 provider for ethdeploy.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/silentcicero/ethdeploy-provider-zero-client#readme",
   "dependencies": {
-    "web3-provider-engine": "^7.8.6"
+    "web3-provider-engine": "^7.8.7"
   }
 }

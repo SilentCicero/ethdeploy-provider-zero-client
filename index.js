@@ -1,5 +1,6 @@
 // require web3
-const zeroClientProvider = require('web3-provider-engine/dist/ZeroClientProvider');
+const ProviderEngine = require('web3-provider-engine');
+const zeroClientProvider = require('web3-provider-engine/zero');
 
 // main zero client provider
 module.exports = function(providerObject) {
