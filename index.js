@@ -47,7 +47,8 @@ const fixEthereumJSTxObject = function(rawTx) {
   }
 
   // fix data by prefixing it with zero
-  if (typeof rawTxMutation.data !== 'undefined') {
+  if (typeof rawTxMutation.data !== 'undefined'
+      && rawTxMutation.data.slice(0, 2) !== '0x') {
     rawTxMutation.data = '0x' + rawTxMutation.data;
   }
 
